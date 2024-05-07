@@ -1,0 +1,47 @@
+@import "colors";
+
+.main {
+    margin: 39px 110px;
+}
+
+.main__application-title {
+    display: flex;
+  
+    &__logo-image {
+      border-radius: 20%;
+      width: 72px;
+      margin: 7px 24px 0 0;
+    }
+  
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  
+      &-header {
+        font-family: "Google Sans";
+        font-size: 1.5rem;
+      }
+  
+      &-developer {
+        font-family: "Google Sans";
+        color: $current-link-color;
+        font-size: 1rem;
+      }
+  
+      &-other {
+        margin-top: 4px;
+        font-family: Roboto, Arial, sans-serif;
+        color: $text-secondary-color;
+        font-size: 0.75rem;
+        letter-spacing: 0.025em;
+        line-height: 1rem;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .main {
+      margin: 39px 28px;
+    }
+  }
