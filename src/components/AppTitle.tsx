@@ -6,7 +6,7 @@ interface AppTitleProps {
 export default function AppTitle({ name, author }: AppTitleProps) {
 
   return (
-    <div className="main">
+    <div className="main app-width">
       <div className="main__application-title">
         <div className="main__application-title__logo">
           <img
