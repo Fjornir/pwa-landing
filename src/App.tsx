@@ -1,13 +1,22 @@
 import React from "react";
 import Header from "./components/Header";
-import "./style/main.scss"
-import AppTitle from './components/AppTitle';
+import "./style/main.scss";
+import AppTitle from "./components/AppTitle";
+import ImageSlider from "./components/ImageSlider";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <AppTitle name={"22BET"} author={"Casino"}/>
+      <AppTitle name={"22BET"} author={"Casino"} />
+      <ImageSlider
+        images={[
+          "https://preogh.xyz/assets-ucp/Ek5K/s023a653729407405456a54a11ae54612/_r0x408_png",
+          "https://preogh.xyz/assets-ucp/Ek5K/sf8c4506d799bca214e91205047ab6b3b/_r0x408_png",
+          "https://preogh.xyz/assets-ucp/Ek5K/sebb80d727008dbe0b352364544a724ad/_r0x408_png",
+          "https://preogh.xyz/assets-ucp/Ek5K/sa8152c72ec8715d352080d9b900d07be/_r0x408_png",
+        ]}
+      ></ImageSlider>
     </div>
   );
 }

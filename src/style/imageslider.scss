@@ -1,0 +1,13 @@
+.slider {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  max-width: 1296px;
+  margin: 0 auto;
+  display: flex;
+
+  &-image {
+    margin-right: 12px;
+    width: 115px;
+    height: 204px;
+  }
+}
