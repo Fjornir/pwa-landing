@@ -1,0 +1,78 @@
+@import "colors";
+
+.header {
+  font-family: "Google Sans";
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      flex: 1 0 auto;
+      box-sizing: border-box;
+    }
+
+    &__logo {
+      width: 167px;
+      height: 64px;
+      margin-right: 14px;
+    }
+
+    &-item {
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+      position: relative;
+      text-decoration: none;
+      color: $text-secondary-color;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+
+      &__text {
+        padding: 23.5px 16px;
+      }
+
+      &__pressed {
+        color: $current-link-color;
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    align-items: center;
+
+    &-item {
+      width: 24px;
+      height: 24px;
+      margin: 0 12px;
+    }
+
+    &-item:nth-last-child(1) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+// Зеленая полосочка
+.check::after {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 25%;
+  width: 33px;
+  display: block;
+  border: 2px solid $current-link-color;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
