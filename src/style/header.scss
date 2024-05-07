@@ -55,11 +55,16 @@
       width: 24px;
       height: 24px;
       margin: 0 12px;
+      background: none;
+      padding: 0;
+      border: none;
+      cursor: pointer;
     }
 
     &-item:nth-last-child(1) {
       width: 32px;
       height: 32px;
+      margin: 0 8px;
     }
   }
 }

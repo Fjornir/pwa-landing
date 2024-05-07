@@ -30,15 +30,15 @@ export default function Header() {
         </div>
       </div>
       <div className="header-menu">
-        <span className="header-menu-item">
+        <button className="header-menu-item">
           <img src={searchImg} alt=""></img>
-        </span>
-        <span className="header-menu-item">
+        </button>
+        <button className="header-menu-item">
           <img src={questionImg} alt=""></img>
-        </span>
-        <span className="header-menu-item">
+        </button>
+        <button className="header-menu-item">
           <img src={profileImg} alt=""></img>
-        </span>
+        </button>
       </div>
     </header>
   );
