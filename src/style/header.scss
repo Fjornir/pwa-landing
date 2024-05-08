@@ -6,6 +6,10 @@
   display: flex;
   justify-content: space-between;
   height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fefefe;
 
   &-nav {
     display: flex;
@@ -36,7 +40,7 @@
       font-size: 0.875rem;
       letter-spacing: .0178571em;
       line-height: 1.25rem;
-      font-weight: 500;
+      font-weight: 700;
 
       &__text {
         padding: 23.5px 17px;

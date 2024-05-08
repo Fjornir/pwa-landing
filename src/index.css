@@ -61,11 +61,6 @@ textarea, select {
   font: inherit;
 }
 
-/* Make sure textarea without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
@@ -76,5 +71,12 @@ textarea:not([rows]) {
   font-family: 'Google Sans';
   src: local('Google Sans'),
     url('./fonts/Google\ Sans/GoogleSans-Medium.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: local('Google Sans'),
+    url('./fonts/Google\ Sans/GoogleSans-Regular.ttf') format('truetype');
   font-weight: 500;
 }

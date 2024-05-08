@@ -3,8 +3,12 @@ import Header from "./components/Header";
 import "./style/main.scss";
 import AppTitle from "./components/AppTitle";
 import ImageSlider from "./components/ImageSlider";
+import About from "./components/About";
 
 function App() {
+  const text =
+    "Best casino in Malaysia\n1160 MYR\n500% bonus on your first deposit!\n+70 FREE SPINS";
+
   return (
     <div className="App">
       <Header></Header>
@@ -17,6 +21,7 @@ function App() {
           "https://preogh.xyz/assets-ucp/Ek5K/sa8152c72ec8715d352080d9b900d07be/_r0x408_png",
         ]}
       ></ImageSlider>
+      <About title={"About this game"} text={text}></About>
     </div>
   );
 }
