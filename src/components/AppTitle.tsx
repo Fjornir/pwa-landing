@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import ratedOld from "../imgs/eu_18.png";
 
 interface AppTitleProps {
@@ -5,7 +7,45 @@ interface AppTitleProps {
   author: string;
 }
 
+
 export default function AppTitle({ name, author }: AppTitleProps) {
+
+  const [deferredPrompt, setDeferredPrompt] = useState<Event | null>(null);
+  const [canInstall, setCanInstall] = useState(false);
+
+  // Обработка события beforeinstallprompt
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault(); // Предотвращаем браузерный диалог установки
+      setDeferredPrompt(e); // Сохраняем событие для дальнейшего использования
+      setCanInstall(true); // Устанавливаем флаг, что установка возможна
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  // Обработчик нажатия на кнопку установки
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      // Вызываем диалог установки
+      (deferredPrompt as any).prompt();
+
+      // Ожидаем результат диалога
+      (deferredPrompt as any).userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('Пользователь согласился на установку');
+        } else {
+          console.log('Пользователь отказался от установки');
+        }
+        setDeferredPrompt(null); // Сбрасываем объект deferredPrompt
+        setCanInstall(false); // Устанавливаем флаг, что установка больше невозможна
+      });
+    }
+  };
   return (
     <div className="main app-width">
       <div className="main__application-title">
@@ -52,11 +92,13 @@ export default function AppTitle({ name, author }: AppTitleProps) {
 
       <div className="app-title__install-container">
 
-        <div className="app-title__install__btn-container">
-          <button className="app-title__instal-btn">
+      <div className="app-title__install__btn-container">
+        {canInstall && (
+          <button className="app-title__install-btn" onClick={handleInstallClick}>
             Install
           </button>
-        </div>
+        )}
+      </div>
 
         <div className="app-title__wishlist__btn-container">
             <button className="app-title__wishlist__btn-btn">

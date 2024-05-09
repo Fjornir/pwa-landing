@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import Header from "./components/Header";
 import "./style/main.scss";
 import AppTitle from "./components/AppTitle";
@@ -6,6 +6,21 @@ import ImageSlider from "./components/ImageSlider";
 import About from "./components/About";
 
 function App() {
+  useEffect(() => {
+    window.addEventListener('appinstalled', handleInstall);
+
+    return () => {
+      window.removeEventListener('appinstalled', handleInstall);
+    }
+  }, []);
+
+  const handleInstall = (event: Event) => {
+    event.preventDefault();
+    window.open('/home', '_blank');
+  }
+
+
+
   const text =
     "Best casino in Malaysia\n1160 MYR\n500% bonus on your first deposit!\n+70 FREE SPINS";
 
