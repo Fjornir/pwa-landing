@@ -4,6 +4,7 @@ import "./style/main.scss";
 import AppTitle from "./components/AppTitle";
 import ImageSlider from "./components/ImageSlider";
 import About from "./components/About";
+import Rating from "./components/Rating";
 
 function App() {
   const text =
@@ -22,6 +23,7 @@ function App() {
         ]}
       ></ImageSlider>
       <About title={"About this game"} text={text}></About>
+      <Rating score={5} reviews={1000}></Rating>
     </div>
   );
 }
