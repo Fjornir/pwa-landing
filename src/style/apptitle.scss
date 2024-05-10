@@ -117,7 +117,7 @@
     flex-direction: column;
 }
 
-.app-title__instal-btn{
+.app-title__install-btn{
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
     fill: #202124;
@@ -219,3 +219,8 @@
   color: #01875f;
 }
   
+  @media screen and (max-width: 800px) {
+    .main {
+      margin: 39px 28px;
+    }
+  }

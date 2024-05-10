@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import ratedOld from "../imgs/eu_18.png";
 
@@ -7,9 +7,7 @@ interface AppTitleProps {
   author: string;
 }
 
-
 export default function AppTitle({ name, author }: AppTitleProps) {
-
   const [deferredPrompt, setDeferredPrompt] = useState<Event | null>(null);
   const [canInstall, setCanInstall] = useState(false);
 
@@ -21,10 +19,13 @@ export default function AppTitle({ name, author }: AppTitleProps) {
       setCanInstall(true); // Устанавливаем флаг, что установка возможна
     };
 
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
     };
   }, []);
 
@@ -36,10 +37,10 @@ export default function AppTitle({ name, author }: AppTitleProps) {
 
       // Ожидаем результат диалога
       (deferredPrompt as any).userChoice.then((choiceResult: any) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('Пользователь согласился на установку');
+        if (choiceResult.outcome === "accepted") {
+          console.log("Пользователь согласился на установку");
         } else {
-          console.log('Пользователь отказался от установки');
+          console.log("Пользователь отказался от установки");
         }
         setDeferredPrompt(null); // Сбрасываем объект deferredPrompt
         setCanInstall(false); // Устанавливаем флаг, что установка больше невозможна
@@ -91,32 +92,44 @@ export default function AppTitle({ name, author }: AppTitleProps) {
       </div>
 
       <div className="app-title__install-container">
-
-      <div className="app-title__install__btn-container">
-        {canInstall && (
-          <button className="app-title__install-btn" onClick={handleInstallClick}>
-            Install
-          </button>
-        )}
-      </div>
+        <div className="app-title__install__btn-container">
+          {canInstall ? (
+            <button
+              className="app-title__install-btn"
+              onClick={handleInstallClick}
+            >
+              Install
+            </button>
+          ) : (
+            <button
+              className="app-title__install-btn"
+            >
+              <div className="loadingio-spinner-rolling-2by998twmg8">
+                <div className="ldio-yzaezf3dcmj">
+                  <div></div>
+                </div>
+              </div>
+            </button>
+          )}
+        </div>
 
         <div className="app-title__wishlist__btn-container">
-            <button className="app-title__wishlist__btn-btn">
-              <span
-                className="app-title__wishlist__icon-container"
-                aria-hidden="true"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M7 3H17C18.1045 3 19 3.8955 19 5V21L12 18L5 21L5.01075 5C5.01075 3.8955 5.8965 3 7 3ZM12 15.824L17 18V5H7V18L12 15.824ZM13 7V9H15V11H13V13H11V11H9V9H11V7H13Z"></path>
-                </svg>
-              </span>
-              <span
-                className="app-title__wishlist__text-container"
-                aria-hidden="true"
-              >
-                Add to wishlist
-              </span>
-            </button>
+          <button className="app-title__wishlist__btn-btn">
+            <span
+              className="app-title__wishlist__icon-container"
+              aria-hidden="true"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M7 3H17C18.1045 3 19 3.8955 19 5V21L12 18L5 21L5.01075 5C5.01075 3.8955 5.8965 3 7 3ZM12 15.824L17 18V5H7V18L12 15.824ZM13 7V9H15V11H13V13H11V11H9V9H11V7H13Z"></path>
+              </svg>
+            </span>
+            <span
+              className="app-title__wishlist__text-container"
+              aria-hidden="true"
+            >
+              Add to wishlist
+            </span>
+          </button>
         </div>
       </div>
     </div>
