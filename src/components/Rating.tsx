@@ -26,7 +26,7 @@ export default function Rating({ score, reviews }: RatingDataType) {
       <div className="rating-data">
         <div className="rating-data-scores">
           <span className="rating-data-scores__number">{score}</span>
-          <Stars></Stars>
+          <Stars width={16}></Stars>
           <div className="rating-data-scores__reviews">{reviews} reviews</div>
         </div>
         <div className="rating-data-progress">
