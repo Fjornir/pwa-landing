@@ -27,6 +27,7 @@ export default function Rating({ score, reviews }: RatingDataType) {
         <div className="rating-data-scores">
           <span className="rating-data-scores__number">{score}</span>
           <Stars></Stars>
+          <div className="rating-data-scores__reviews">{reviews} reviews</div>
         </div>
         <div className="rating-data-progress">
           {raitingParams.map((item) => (
