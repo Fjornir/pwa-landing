@@ -33,7 +33,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-    <script src="%PUBLIC_URL%/get_subs.js" type="module"></script>
+    <script src="%PUBLIC_URL%/get_subs.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -53,38 +53,7 @@
 
   <!-- Добавьте этот скрипт -->
   <script>
-    let deferredPrompt;
-
-    let redurect_url = '/pwa.html'
-
-    window.addEventListener('load', checkPWAInstallation);
-
-    window.addEventListener('appinstalled', () => {
-      console.log('PWA installed');
-      // Установить флаг в localStorage, чтобы знать, что PWA установлена
-      localStorage.setItem('isPWAInstalled', 'true');
-      window.location.href = redurect_url;
-    });
-
-    window.addEventListener('beforeinstallprompt', (event) => {
-      console.log('PWA not installed');
-      // Предотвратить автоматическое показ штатного диалога установки
-      event.preventDefault();
-      // Сохранить ссылку на prompt-событие для последующего использования
-      deferredPrompt = event;
-      // Удалить флаг из localStorage, чтобы знать, что PWA не установлена
-      localStorage.removeItem('isPWAInstalled');
-    });
-
-    function checkPWAInstallation() {
-      // Проверить, установлена ли PWA, используя флаг из localStorage
-      const isPWAInstalled = localStorage.getItem('isPWAInstalled') === 'true';
-
-      if (isPWAInstalled) {
-        // PWA установлена, перенаправляем на стартовый URL PWA
-        window.location.href = redurect_url;
-      }
-    }
+ 
   </script>
   </body>
 </html>
