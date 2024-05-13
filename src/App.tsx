@@ -10,18 +10,18 @@ import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 
 function App() {
-  useEffect(() => {
-    window.addEventListener('appinstalled', handleInstall);
+  // useEffect(() => {
+  //   window.addEventListener('appinstalled', handleInstall);
 
-    return () => {
-      window.removeEventListener('appinstalled', handleInstall);
-    }
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('appinstalled', handleInstall);
+  //   }
+  // }, []);
 
-  const handleInstall = (event: Event) => {
-    event.preventDefault();
-    window.open('/home', '_blank');
-  }
+  // const handleInstall = (event: Event) => {
+  //   event.preventDefault();
+  //   window.open('./pwa.html', '_blank');
+  // }
 
 
 

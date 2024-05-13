@@ -33,6 +33,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="%PUBLIC_URL%/get_subs.js" type="module"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -47,5 +48,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+ <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- Добавьте этот скрипт -->
+  <script>
+     // Проверяем наличие файла манифеста
+        // Проверяем наличие сервисного работника
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            window.location.replace('/pwa.html');
+        } else {
+            console.log('PWA is not installed.');
+        }
+
+
+    window.addEventListener('appinstalled', () => {
+      // После успешной установки PWA перенаправляем пользователя на pwa.html
+      window.location.replace('/pwa.html');
+    });
+  </script>
   </body>
 </html>
