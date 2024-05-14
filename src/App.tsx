@@ -6,6 +6,7 @@ import ImageSlider from "./components/ImageSlider";
 import About from "./components/About";
 import Rating from "./components/Rating";
 import Reviews from "./components/Reviews";
+import Footer from "./components/Footer";
 
 function App() {
   const text =
@@ -26,6 +27,7 @@ function App() {
       <About title={"About this game"} text={text}></About>
       <Rating score={5} reviews={1000}></Rating>
       <Reviews amount={6}></Reviews>
+      <Footer></Footer>
     </div>
   );
 }
