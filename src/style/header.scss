@@ -8,7 +8,7 @@
   height: 64px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: #fefefe;
 
   &-nav {
@@ -38,7 +38,7 @@
       text-decoration: none;
       color: $text-secondary-color;
       font-size: 0.875rem;
-      letter-spacing: .0178571em;
+      letter-spacing: 0.0178571em;
       line-height: 1.25rem;
       font-weight: 700;
 
@@ -74,6 +74,10 @@
   }
 }
 
+.scroll {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 // Зеленая полосочка
 .check::after {
   content: "";
@@ -85,4 +89,18 @@
   border-top: 3px solid $current-link-color;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+}
+
+@media screen and (max-width: 740px) {
+  .header {
+    padding: 0;
+    &-nav {
+      &__logo {
+        margin: 0 16px;
+      }
+      &-wrapper {
+        display: none;
+      }
+    }
+  }
 }

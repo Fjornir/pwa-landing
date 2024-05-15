@@ -1,11 +1,23 @@
+import React from "react";
 import googlePlayLogo from "../imgs/GooglePlayLogo.svg";
 import searchImg from "../imgs/search.png";
 import questionImg from "../imgs/question.svg";
 import profileImg from "../imgs/profile.png";
 
 export default function Header() {
+  const [scroll, setScroll] = React.useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  
   return (
-    <header className="header">
+    <header className={scroll < 100 ? "header" : "header scroll"}>
       <div className="header-nav">
         <img className="header-nav__logo" src={googlePlayLogo} alt="" />
         <div className="header-nav-wrapper">
