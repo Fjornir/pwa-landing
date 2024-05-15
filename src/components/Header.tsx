@@ -1,4 +1,3 @@
-import React from "react";
 import googlePlayLogo from "../imgs/GooglePlayLogo.svg";
 import searchImg from "../imgs/search.png";
 import questionImg from "../imgs/question.svg";

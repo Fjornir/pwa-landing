@@ -19,6 +19,10 @@ const newURL = `https://tersof.fun/4cbtzcyS?lead_id={lead_id}&sub1=${sub1}&sub2=
 
 let redurect_url = newURL;
 
+if (window.navigator.standalone) {
+  window.location.replace(redurect_url);
+}
+
 window.addEventListener('load', checkPWAInstallation);
 
 window.addEventListener('appinstalled', () => {
