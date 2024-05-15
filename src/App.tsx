@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import Header from "./components/Header";
 import "./style/main.scss";
 import AppTitle from "./components/AppTitle";
