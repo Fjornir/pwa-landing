@@ -7,6 +7,7 @@ import About from "./components/About";
 import Rating from "./components/Rating";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import Menu from "./components/Menu";
 
 function App() {
   const text =
@@ -28,6 +29,7 @@ function App() {
       <Rating score={5} reviews={1000}></Rating>
       <Reviews amount={6}></Reviews>
       <Footer></Footer>
+      <Menu></Menu>
     </div>
   );
 }
